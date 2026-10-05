@@ -24,7 +24,7 @@ Dentro de `frontend/` hay **dos proyectos independientes**. Cada uno tiene su pr
 
 | Proyecto | Descripción | Tecnologías |
 |---|---|---|
-| `frontend/formulario` | Formulario de solicitud de evaluación psicolaboral | React 19, Vite 8, CSS propio, ESLint |
+| `frontend/formulario` | Formulario de solicitud de evaluación psicolaboral | React 19, Vite 8, ESLint |
 | `frontend/dashboard` | Panel de gestión de solicitudes | React 19, Vite 8, React Router 7, Tailwind CSS 4, oxlint |
 
 ## frontend/formulario
@@ -35,14 +35,17 @@ Formulario para solicitar una evaluación psicolaboral. Campos: nombre completo 
 formulario/
 ├── index.html
 ├── package.json
+├── package-lock.json
 ├── vite.config.js
 ├── eslint.config.js
+├── .gitignore
+├── README.md
 ├── public/
 └── src/
     ├── main.jsx      # Punto de entrada
     ├── App.jsx       # Componente del formulario (estado, validación y envío)
-    ├── App.css       # Estilos del formulario
-    └── index.css     # Estilos globales
+    ├── index.css     # Estilos
+    └── assets/       # Recursos estáticos
 ```
 
 Al enviar, hace un `POST` a `/api/evaluaciones/iniciar` con los datos como `multipart/form-data`. Ese endpoint aún no existe, por lo que hoy el envío muestra el mensaje de error.
